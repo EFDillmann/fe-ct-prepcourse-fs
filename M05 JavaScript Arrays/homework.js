@@ -162,18 +162,34 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   const meses = array.filter(e => e === "Enero" || e === "Marzo" || e === "Noviembre");
+
+   if (meses.length === 3) {
+      return meses;
+   } else if(meses.length <= 2) {
+      return "No se encontraron los meses pedidos";
+   }
 }
 
 function tablaDelSeis() {
    // Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
    // La función devuelve un arreglo con los resultados de la tabla de multiplicar del 6 en orden creciente.
    // Tu código:
+   const tablaSeis = [];
+
+   for (let i = 0; i < 11; i++) {
+      tablaSeis.push(i *6);
+   }
+
+   return tablaSeis;
 }
 
 function mayorACien(array) {
    // La función recibe un arreglo con enteros entre 0 y 200.
    // Recorrerlo y retornar un arreglo con todos los valores mayores a 100 (no incluye el 100).
    // Tu código:
+   const masCien = array.filter(e => e > 100);
+   return masCien;
 }
 
 /* ----------------------------------------------------------------------------------
@@ -187,6 +203,17 @@ function breakStatement(num) {
    // la ejecución y retornar el string: "Se interrumpió la ejecución".
    // [PISTA]: utiliza el statement 'break'.
    // Tu código:
+   const nums = [];
+   let newNum = num;
+   for (let i = 0; i < 10; i++) {
+      newNum += 2;
+      nums.push(newNum);
+      if (newNum === i) {
+         return "Se interrumpió la ejecución";
+         break;
+      }
+   }
+   return nums;
 }
 
 function continueStatement(num) {
@@ -196,6 +223,16 @@ function continueStatement(num) {
    // se continua con la siguiente iteración.
    // [PISTA]: utiliza el statement 'continue'.
    // Tu código:
+   const nums = [];
+   let newNum = num;
+   for (let i = 0; i < 10; i++) {
+      if (i === 5) {
+         continue;
+      }
+      newNum += 2;
+      nums.push(newNum);
+   }
+   return nums;
 }
 
 /*⚠️ NO MODIFIQUES NADA DEBAJO DE ESTO ⚠️*/
